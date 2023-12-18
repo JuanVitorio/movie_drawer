@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "filmes.h"
 #include "index.h"
+#include "validacoes.h"
 
 int main(void)
 {
@@ -21,11 +22,11 @@ void main_menu(void)
   printf("5. Buscar Filme\n");
   printf("Desejo: ");
   scanf("%d", &op);
-
+  clear_buffer();
   switch (op)
   {
   case 1:
-    add_filme();
+    add_movie();
     break;
   case 2:
 

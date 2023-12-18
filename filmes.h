@@ -1,10 +1,15 @@
-typedef struct filmes
+#ifndef BD_UTILS
+#define BD_UTILS
+
+typedef struct movie
 {
   char name[100];
-  int hours, minutes;
+  char duration[10];
   int year;
   char gender[50];
-  char sinopse[400];
-} Filmes;
+  char synopsis[400];
+} Movie;
 
-void add_filme(void);
+Movie *add_movie(void);
+
+#endif

@@ -2,10 +2,18 @@
 #include <stdlib.h>
 #include "validacoes.h"
 #include "filmes.h"
+#include "bd_utils.h"
 
-void add_filme(void)
+Movie *add_movie(void)
 {
-  char nome[100];
+  Movie *mov;
+  mov = (Movie *)malloc(sizeof(Movie));
   system("clear||cls");
-  read_name(nome);
+  read_name(mov->name);
+  read_duration(mov->duration);
+  read_gender(mov->gender);
+  read_synopsis(mov->synopsis);
+  read_year(mov->year);
+  save_movie(mov);
+  printf("Filme cadastrado!\n");
 }
