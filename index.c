@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "filmes.h"
+#include "index.h"
 
 int main(void)
 {
+  main_menu();
   return 0;
 }
 
-void main_menu()
+void main_menu(void)
 {
   int op = 0;
   printf("- Movie Drawer - \n");
@@ -22,7 +25,7 @@ void main_menu()
   switch (op)
   {
   case 1:
-    // Adicionar filme
+    add_filme();
     break;
   case 2:
 
