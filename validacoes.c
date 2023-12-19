@@ -13,7 +13,7 @@ void read_name(char *name)
   do
   {
     printf("Nome do filme: ");
-    fgets(name, sizeof(name), stdin);
+    fgets(name, 100, stdin);
     x = name_validation(name);
     if (x == 0)
     {
@@ -28,12 +28,12 @@ void read_duration(char *duration)
   do
   {
     printf("Duração do filme (ex: 02:15): ");
-    clear_buffer();
     scanf("%s", duration);
+    clear_buffer();
     x = validate_duraion(duration);
     if (x == 0)
     {
-      printf("Digite corretamente a hora.\n");
+      printf("Digite corretamente a duração.\n");
     }
   } while (x != 1);
 }
@@ -44,7 +44,6 @@ void read_year(char *year)
   do
   {
     printf("Digite o ano de lançamento do filme: ");
-    clear_buffer();
     fgets(year, 5, stdin);
     x = year_validation(year);
     if (x == 0)
@@ -60,8 +59,7 @@ void read_synopsis(char *synopsis)
   do
   {
     printf("Escreva a sinópse do filme: ");
-    clear_buffer();
-    fgets(synopsis, sizeof(synopsis), stdin);
+    fgets(synopsis, 400, stdin);
     x = name_validation(synopsis);
     if (x == 0)
     {
@@ -76,8 +74,7 @@ void read_gender(char *gender)
   do
   {
     printf("Digite o(s) gênero(s) do filme: ");
-    clear_buffer();
-    fgets(gender, sizeof(gender), stdin);
+    fgets(gender, 50, stdin);
     x = gender_validation(gender);
     if (x == 0)
     {
@@ -99,7 +96,6 @@ int year_validation(char *year)
   {
     if (!isdigit(year[i]))
     {
-      printf("pica\n");
       return 0;
     }
   }
@@ -107,7 +103,6 @@ int year_validation(char *year)
   if (ano < 1895 || ano > anoAtual)
   {
     printf("%d", ano);
-    printf("pica2\n");
     return 0;
   }
 

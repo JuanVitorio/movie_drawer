@@ -14,6 +14,7 @@ Movie *add_movie(void)
   read_gender(mov->gender);
   read_synopsis(mov->synopsis);
   read_year(mov->year);
+  mov->status = 'A';
   save_movie(mov);
   printf("Filme cadastrado!\n");
   printf("Aperte ENTER para voltar...!\n");

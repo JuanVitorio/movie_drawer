@@ -8,6 +8,7 @@ typedef struct movie
   char year[5];
   char gender[50];
   char synopsis[400];
+  char status;
 } Movie;
 
 Movie *add_movie(void);

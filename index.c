@@ -3,6 +3,7 @@
 #include "filmes.h"
 #include "index.h"
 #include "validacoes.h"
+#include "bd_utils.h"
 
 int main(void)
 {
@@ -12,9 +13,9 @@ int main(void)
 
 void main_menu(void)
 {
+  int op;
   do
   {
-    int op;
     system("cls||clear");
     printf("- Movie Drawer - \n");
     printf("Bem Vindo!\n\n");
