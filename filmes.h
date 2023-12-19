@@ -5,7 +5,7 @@ typedef struct movie
 {
   char name[100];
   char duration[10];
-  int year;
+  char year[5];
   char gender[50];
   char synopsis[400];
 } Movie;

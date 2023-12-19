@@ -16,4 +16,7 @@ Movie *add_movie(void)
   read_year(mov->year);
   save_movie(mov);
   printf("Filme cadastrado!\n");
+  printf("Aperte ENTER para voltar...!\n");
+  getchar();
+  getchar();
 }

@@ -38,14 +38,14 @@ void read_duration(char *duration)
   } while (x != 1);
 }
 
-void read_year(int year)
+void read_year(char *year)
 {
   int x;
   do
   {
     printf("Digite o ano de lançamento do filme: ");
     clear_buffer();
-    scanf("%d", &year);
+    fgets(year, 5, stdin);
     x = year_validation(year);
     if (x == 0)
     {
@@ -86,21 +86,31 @@ void read_gender(char *gender)
   } while (x != 1);
 }
 
-int year_validation(int year)
+int year_validation(char *year)
 {
-  time_t actual_time;
-  struct tm *time_info = localtime(&actual_time);
-  int actual_year = time_info->tm_year;
-  printf("%d", &actual_year);
-  if (year < 1895 || year > actual_year)
+  time_t t;
+  time(&t);
+  struct tm *data = localtime(&t);
+  int anoAtual = data->tm_year + 1900;
+
+  int ano = atoi(year);
+
+  for (int i = 0; year[i] != '\0'; i++)
   {
+    if (!isdigit(year[i]))
+    {
+      printf("pica\n");
+      return 0;
+    }
+  }
+
+  if (ano < 1895 || ano > anoAtual)
+  {
+    printf("%d", ano);
+    printf("pica2\n");
     return 0;
   }
 
-  if (!isdigit(year))
-  {
-    return 0;
-  }
   return 1;
 }
 
@@ -111,15 +121,6 @@ int name_validation(char *name)
   {
     return 0;
   }
-  // this part reads if there are numbers or simbols, but it's useless here, cause there are movies wih numbers or simbols
-  //  while (x < sizeof(name))
-  //  {
-  //    if (isdigit(name[x]) || ispunct(name[x]))
-  //    {
-  //      return 0;
-  //    }
-  //    x++;
-  //  }
   return 1;
 }
 

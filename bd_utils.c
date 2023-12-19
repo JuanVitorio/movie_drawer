@@ -16,3 +16,8 @@ void save_movie(Movie *mov)
   free(mov);
   fclose(fm);
 }
+
+void list_movies(void)
+{
+  
+}
