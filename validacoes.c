@@ -44,6 +44,7 @@ void read_year(int year)
   do
   {
     printf("Digite o ano de lançamento do filme: ");
+    clear_buffer();
     scanf("%d", &year);
     x = year_validation(year);
     if (x == 0)
@@ -59,6 +60,7 @@ void read_synopsis(char *synopsis)
   do
   {
     printf("Escreva a sinópse do filme: ");
+    clear_buffer();
     fgets(synopsis, sizeof(synopsis), stdin);
     x = name_validation(synopsis);
     if (x == 0)
@@ -86,10 +88,10 @@ void read_gender(char *gender)
 
 int year_validation(int year)
 {
-
   time_t actual_time;
   struct tm *time_info = localtime(&actual_time);
   int actual_year = time_info->tm_year;
+  printf("%d", &actual_year);
   if (year < 1895 || year > actual_year)
   {
     return 0;
